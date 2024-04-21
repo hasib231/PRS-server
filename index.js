@@ -77,18 +77,18 @@ async function run() {
       res.send(result);
     });
 
-    app.get("/checkUser/:email", async (req, res) => {
-      const email = req.params.email;
+    // app.get("/checkUser/:email", async (req, res) => {
+    //   const email = req.params.email;
 
-      const query = { email: email };
-      const user = await userDataCollection.findOne(query);
-      if (user) {
-        const result = {  role: user.role };
-        res.send(result);
-      } else {
-        res.status(404).send({ message: "User not found." });
-      }
-    });
+    //   const query = { email: email };
+    //   const user = await userDataCollection.findOne(query);
+    //   if (user) {
+    //     const result = {  role: user.role };
+    //     res.send(result);
+    //   } else {
+    //     res.status(404).send({ message: "User not found." });
+    //   }
+    // });
 
 
     app.get("/allUser", async (req, res) => {
